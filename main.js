@@ -3,13 +3,7 @@
 
 // stretch goal: translate a random few words into a spanish
 
-// Should I Go Outside? A tool for Codesmith students
-  // check the temperature outside via the location of the user
-    // give back the local temperature and an answer on whether or not to go outside
-    // if above 65F, 'Whoa! Too hot out! Stay in and code :)'
-    // if below 65F, 'Brrr... Too cold out! Stay in and code :)'
-    // if it's exactly 65F, 'Too perfect out! Just stay in and CODE.'
-/**
+
  * create a folder structure to store all files
  * fill out the manifest.json file (acts as configuration for the extension)
  *  - name, descrip, current version, and icons for extension
