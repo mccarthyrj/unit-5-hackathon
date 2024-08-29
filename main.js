@@ -3,7 +3,7 @@
 
 // stretch goal: translate a random few words into a spanish
 
-
+/*
  * create a folder structure to store all files
  * fill out the manifest.json file (acts as configuration for the extension)
  *  - name, descrip, current version, and icons for extension
@@ -22,9 +22,9 @@ function getCity() {
   .then(data => {
     if (data && data.city) {
       fetchCurrentWeather(data.city)
-  .catch(error => {
-      console.error('Failed to Get Your City:', error);
-    });
+  // .catch(error => {
+  //     console.error('Failed to Get Your City:', error);
+  //   });
     }
   })
 }
