@@ -18,27 +18,27 @@
  * Service worker - event based script that runs separately from a web page
  * 
  * 
- * API TOKEN
- * a1a86e944a70f0
+ * API TOKEN(s)
+ * a1a86e944a70f0 // 41a33d8335243e6bfec3353a212f6f2f
  */
+
 function getCity() {
   fetch('https://ipinfo.io/json?token=a1a86e944a70f0')
   .then(response => response.json())
   .then(data => {
-      if (data && data.city) {
-          fetchCurrentWeather(data.city);
-      }
-  })
+    if (data && data.city) {
+      fetchCurrentWeather(data.city)
   .catch(error => {
       console.error('Failed to Get Your City:', error);
-  });
+    });
+    }
+  })
 }
 
-
 function fetchCurrentWeather(city) {
-  const weatherstackKey = '6132a94bfc46d5c76880f9a0baeaa774';
-  const url = `http://api.weatherstack.com/current?access_key=${weatherstackKey}&query=${encodeURIComponent(city)}&units=m&language=en`;
-
+//   // const weatherstackKey = '966a13e1c57e462a61c99729438eabeb'; // 'https://api.weatherstack.com/current?access_key=41a33d8335243e6bfec3353a212f6f2f&query=${encodeURIComponent(city)}
+const url = `https://api.weatherstack.com/current?access_key=41a33d8335243e6bfec3353a212f6f2f&query=${encodeURIComponent(city)}&units=f`;
+//   console.log(url);
 
   fetch(url)
   .then(response => response.json())
@@ -50,14 +50,11 @@ function fetchCurrentWeather(city) {
       }
   })
   .catch(error => {
-      console.error('Failed to get the temperature:', error);
+      console.error('Failed to get the temperature:', error)
   });
 }
-// .catch(error => {
-//   console.error('Failed to get the temperature')
-// })
-
 
 chrome.runtime.onInstalled.addListener(() => {
   getCity();
 });
+
