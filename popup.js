@@ -10,14 +10,17 @@ document.addEventListener('DOMContentLoaded', function() {
     chrome.storage.local.get(['temperature'], function(result) {
         let message;
         if (result.temperature) {
-            const temp = parseFloat(result.temperature);
+            const temp = parseFloat(result.temperature); // 66 // 65 // 64 // result.temperature
             // Check the temperature and determine the message
             if (temp > 65) {
                 message = `Whoa! ${result.temperature}°F is too hot! Stay in and code :)`;
+                // message = `Whoa! ${66}°F is too hot! Stay in and code :)`;
             } else if (temp < 65) {
                 message = `Brrr! ${result.temperature}°F is too cold! Stay in and code :)`;
+                // message = `Brrr! ${64}°F is too cold! Stay in and code :)`;
             } else {  // temp is exactly 65
-                message = `${result.temperature}°F perfect! ...Maybe you can code outside?`;
+                message = `${result.temperature}°F is perfect! ...Maybe code outside?`;
+                // message = `${65}°F is perfect! ...Maybe code outside?`;
             }
         } else {
             message = 'Temperature data not available';
