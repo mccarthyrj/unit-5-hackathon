@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Should I Go Outside?",
+  "description": "A tool for Codesmith students that, based on local temperature, answers the question: should you go outside?",
+  "version": "1.0",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.jpg"
+  },
+  "icons": {
+    "16": "icon.jpg",
+    "48": "icon.jpg",
+    "128": "icon.jpg"
+  },
+  "background": {
+    "service_worker": "main.js"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "alarms"
+  ]
+}
+
